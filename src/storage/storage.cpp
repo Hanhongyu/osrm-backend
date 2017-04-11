@@ -16,10 +16,10 @@
 #include "extractor/files.hpp"
 #include "extractor/guidance/turn_instruction.hpp"
 #include "extractor/original_edge_data.hpp"
+#include "extractor/packed_osm_ids.hpp"
 #include "extractor/profile_properties.hpp"
 #include "extractor/query_node.hpp"
 #include "extractor/travel_mode.hpp"
-#include "extractor/packed_osm_ids.hpp"
 
 #include "partition/cell_storage.hpp"
 #include "partition/edge_based_graph_reader.hpp"
@@ -341,13 +341,13 @@ void Storage::PopulateLayout(DataLayout &layout)
         layout.SetBlockSize<NodeID>(DataLayout::GEOMETRIES_NODE_LIST,
                                     number_of_compressed_geometries);
         layout.SetBlockSize<SegmentWeight>(DataLayout::GEOMETRIES_FWD_WEIGHT_LIST,
-                                         number_of_compressed_geometries);
+                                           number_of_compressed_geometries);
         layout.SetBlockSize<SegmentWeight>(DataLayout::GEOMETRIES_REV_WEIGHT_LIST,
-                                        number_of_compressed_geometries);
+                                           number_of_compressed_geometries);
         layout.SetBlockSize<SegmentDuration>(DataLayout::GEOMETRIES_FWD_DURATION_LIST,
-                                 number_of_compressed_geometries);
+                                             number_of_compressed_geometries);
         layout.SetBlockSize<SegmentDuration>(DataLayout::GEOMETRIES_REV_DURATION_LIST,
-                                        number_of_compressed_geometries);
+                                             number_of_compressed_geometries);
         layout.SetBlockSize<DatasourceID>(DataLayout::DATASOURCES_LIST,
                                           number_of_compressed_geometries);
     }
